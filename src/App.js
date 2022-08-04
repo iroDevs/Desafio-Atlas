@@ -1,8 +1,11 @@
 import React from 'react'
-
+import Pesquisa from './pages/Pesquisa/Pesquisa'
+import { Routes, Route } from 'react-router-dom'
 function App () {
   return (
-      <h1>Hello world!</h1>
+    <Routes>
+      <Route exact path="/" element={<Pesquisa />} />
+    </Routes>
   )
 }
 

@@ -1,0 +1,22 @@
+.titulo-da-busca {
+    font-size:20px;
+    font-weight:600;
+    margin: 0;
+}
+.btn-pesquisa{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-texto {
+    padding-left: 5px
+}
+
+.container-busca {
+    display: flex;
+    margin: 2px
+}
+.input-busca{
+    width: 40%;
+}

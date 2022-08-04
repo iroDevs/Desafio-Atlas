@@ -1,9 +1,14 @@
 import React from 'react'
+import CampoDeBusca from '../../components/campo de busca/CampoDeBusca'
 import './PesquisaStyle.css'
 
 function Pesquisa () {
   return (
-    <h1>aaaa</h1>
+    <>
+    <div className="centralize container-fluid">
+    <CampoDeBusca />
+    </div>
+    </>
   )
 }
 export default Pesquisa

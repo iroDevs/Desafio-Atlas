@@ -6,7 +6,6 @@ import { FiUsers } from 'react-icons/fi'
 import './PerfilStyle.css'
 
 function Perfil ({ dados }) {
-  console.log(dados)
   const usuario = {
     nome: dados.data.name,
     login: dados.data.login,

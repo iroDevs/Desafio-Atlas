@@ -5,7 +5,6 @@ import Perfil from '../../components/Perfil/Perfil'
 import ListaRepositorios from '../../components/ListaRepositorios/ListaRepositorios'
 import msg from '../../err/messagens'
 import api from '../../api/GitHubApi'
-import rascunho from './rascunho'
 import './Usuario.css'
 export default function Usuario () {
   const { nome } = useParams()
@@ -17,14 +16,13 @@ export default function Usuario () {
   const messagemDeErro = msg.usuarioNaoEncontrado()
   useEffect(() => {
     async function CapturandoUsuario (nome) {
-      // const retornoDaApi = await api.PegueUmUsuarioPeloNome(nome)
-      const retornoDaApi = rascunho.rascunhoUsuario
+      const retornoDaApi = await api.PegueUmUsuarioPeloNome(nome)
+
       setUsuario(retornoDaApi)
-      setLoading(false)
     }
     async function CapturandoRepositorios (nome) {
-      // const retornoDaApi = await api.PegueRepositoriosPeloNomeDeUsuario(nome)
-      const retornoDaApi = rascunho.rascunhoRepositorios
+      const retornoDaApi = await api.PegueRepositoriosPeloNomeDeUsuario(nome)
+
       setRepositorios(retornoDaApi)
       setLoading(false)
     }
@@ -56,7 +54,7 @@ export default function Usuario () {
   return (
     <div className="usuario-container container-fluid">
         <Perfil dados={usuario} />
-        <ListaRepositorios dados={repositorios} quantidade={usuario.data.public_repos} />
+        <ListaRepositorios dados={repositorios.data} quantidade={usuario.data.public_repos} />
 
     </div>
   )

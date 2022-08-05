@@ -14,7 +14,6 @@ export default function CampoDeBusca () {
 
   function mudaEstado ({ target }) {
     setUsuario(target.value)
-    console.log(usuario)
   }
 
   function CampoEstaVazio () {

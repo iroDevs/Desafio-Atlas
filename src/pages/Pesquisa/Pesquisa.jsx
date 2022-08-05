@@ -1,5 +1,5 @@
 import React from 'react'
-import CampoDeBusca from '../../components/campo de busca/CampoDeBusca'
+import CampoDeBusca from '../../components/CampoDeBusca/CampoDeBusca'
 import './PesquisaStyle.css'
 
 function Pesquisa () {

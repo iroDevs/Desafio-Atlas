@@ -21,7 +21,7 @@ function Perfil ({ dados }) {
   }
 
   return (
-    <div className="container perfil-container">
+    <div className=" perfil-container">
         <img src={usuario.foto} className="img-responsive foto-perfil"></img>
         <h3 className="nome-perfil">{usuario.nome}</h3>
         <h4 className="login-perfil">{usuario.login}</h4>

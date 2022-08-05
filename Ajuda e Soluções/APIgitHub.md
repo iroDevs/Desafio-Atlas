@@ -5,4 +5,4 @@
 #### Repositorios 
 adcione o **/repos** no final
 
->https://api.github.com/users/[nome do usuario]/respos
+>https://api.github.com/users/[nome do usuario]/repos

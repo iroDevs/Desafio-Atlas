@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import api from '../../api/GitHubApi'
 export default function Usuario () {
   const { nome } = useParams()
@@ -37,8 +37,10 @@ export default function Usuario () {
     )
   }
 
-  if (!usuarioEncontrado) {
-    return <h1 className="usuario-invalido">Usuário não encontrado no github. Verifique se você digitou o nome corretamente</h1>
+  if (!usuarioEncontrado && !loading) {
+    return (<h1 className="display-6 usuario-invalido">Usuário não encontrado no github. Verifique se você digitou o nome corretamente.<Link to="/">Voltar</Link></h1>
+
+    )
   }
 
   return (

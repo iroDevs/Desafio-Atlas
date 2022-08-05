@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { IoSearchSharp } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom'
 import './CampoDeBuscaStyle.css'
@@ -6,6 +6,7 @@ import './CampoDeBuscaStyle.css'
 export default function CampoDeBusca () {
   const [usuario, setUsuario] = useState('')
 
+  const [alerta, setAlerta] = useState(false)
   const navigate = useNavigate()
 
   function mudaEstado ({ target }) {
@@ -13,9 +14,25 @@ export default function CampoDeBusca () {
     console.log(usuario)
   }
 
-  function click () {
-    navigate(`/usuario/${usuario}`)
+  function CampoEstaVazio () {
+    if (usuario.length > 0) {
+      setAlerta(false)
+      return false
+    } else {
+      setAlerta(true)
+      return true
+    }
   }
+
+  function click () {
+    if (!CampoEstaVazio(usuario)) {
+      navigate(`/usuario/${usuario}`)
+    }
+  }
+
+  useEffect(() => {
+
+  }, [usuario])
 
   return (
     <div className="centralize container">
@@ -26,7 +43,11 @@ export default function CampoDeBusca () {
         <button type="button" onClick={click} className="btn-pesquisa btn btn-secondary"><IoSearchSharp /><span className='btn-texto'>Buscar</span></button>
         <i className="bi bi-1-circle"></i>
       </div>
-
+    {
+      alerta
+        ? <h1>vazio</h1>
+        : <div></div>
+    }
     </div>
   )
 }

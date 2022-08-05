@@ -1,0 +1,11 @@
+.usuario-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.usuario-container div {
+    margin: 20px;
+    
+}

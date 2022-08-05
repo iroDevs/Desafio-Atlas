@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { IoSearchSharp } from 'react-icons/io5'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './CampoDeBuscaStyle.css'
 
 export default function CampoDeBusca () {
   const [usuario, setUsuario] = useState('')
-  const history = useHistory()
+
+  const navigate = useNavigate()
 
   function mudaEstado ({ target }) {
     setUsuario(target.value)
@@ -13,8 +14,9 @@ export default function CampoDeBusca () {
   }
 
   function click () {
-    history.push('/usuario')
+    navigate(`/usuario/${usuario}`)
   }
+
   return (
     <div className="centralize container">
       <p className="titulo-da-busca display-6">Busque o usuario no github</p>
@@ -24,6 +26,7 @@ export default function CampoDeBusca () {
         <button type="button" onClick={click} className="btn-pesquisa btn btn-secondary"><IoSearchSharp /><span className='btn-texto'>Buscar</span></button>
         <i className="bi bi-1-circle"></i>
       </div>
+
     </div>
   )
 }

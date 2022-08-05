@@ -2,6 +2,7 @@ import React from 'react'
 import Pesquisa from './pages/Pesquisa/Pesquisa'
 import { Routes, Route } from 'react-router-dom'
 import Usuario from './pages/Usuario/Usuario'
+import './App.css'
 function App () {
   return (
     <Routes>

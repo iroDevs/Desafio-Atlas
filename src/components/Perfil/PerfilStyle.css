@@ -1,0 +1,10 @@
+.foto-perfil {
+    border-radius: 60%;
+    width: 350px;
+    height:300px;
+}
+.btn-perfil {
+    width: 100%;
+    color:black;
+    background-color: rgba(185, 184, 184, 0.199);
+}

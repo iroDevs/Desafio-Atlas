@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { IoSearchSharp } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom'
+import msg from '../../err/messagens'
 import './CampoDeBuscaStyle.css'
 
 export default function CampoDeBusca () {
@@ -8,6 +10,7 @@ export default function CampoDeBusca () {
 
   const [alerta, setAlerta] = useState(false)
   const navigate = useNavigate()
+  const campoVazioMessage = msg.campoVazio()
 
   function mudaEstado ({ target }) {
     setUsuario(target.value)
@@ -45,7 +48,9 @@ export default function CampoDeBusca () {
       </div>
     {
       alerta
-        ? <h1>vazio</h1>
+        ? <div className="alert alert-danger" role="alert">
+        {campoVazioMessage}
+        </div>
         : <div></div>
     }
     </div>

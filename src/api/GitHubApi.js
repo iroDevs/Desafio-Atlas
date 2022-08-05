@@ -20,7 +20,7 @@ async function PegueRepositoriosPeloNomeDeUsuario (nome) {
     return resultado
   } catch (err) {
     console.log(err)
-    return { message: 'algo deu errado', erro: err }
+    return { status: 400, message: 'algo deu errado', erro: err }
   }
 }
 

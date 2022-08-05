@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import Perfil from '../../components/Perfil/Perfil'
+import msg from '../../err/messagens'
 import api from '../../api/GitHubApi'
+import rascunho from './rascunho'
 export default function Usuario () {
   const { nome } = useParams()
   const [usuario, setUsuario] = useState({})
@@ -9,14 +12,17 @@ export default function Usuario () {
   const [loading, setLoading] = useState(true)
   const [usuarioEncontrado, setUsuarioEncontrado] = useState(false)
 
+  const messagemDeErro = msg.usuarioNaoEncontrado()
   useEffect(() => {
     async function CapturandoUsuario (nome) {
-      const retornoDaApi = await api.PegueUmUsuarioPeloNome(nome)
+      // const retornoDaApi = await api.PegueUmUsuarioPeloNome(nome)
+      const retornoDaApi = rascunho.rascunhoUsuario
       setUsuario(retornoDaApi)
       setLoading(false)
     }
     async function CapturandoRepositorios (nome) {
-      const retornoDaApi = await api.PegueRepositoriosPeloNomeDeUsuario(nome)
+      // const retornoDaApi = await api.PegueRepositoriosPeloNomeDeUsuario(nome)
+      const retornoDaApi = rascunho.rascunhoRepositorios
       setRepositorios(retornoDaApi)
       setLoading(false)
     }
@@ -37,13 +43,18 @@ export default function Usuario () {
     )
   }
 
-  if (!usuarioEncontrado && !loading) {
-    return (<h1 className="display-6 usuario-invalido">Usuário não encontrado no github. Verifique se você digitou o nome corretamente.<Link to="/">Voltar</Link></h1>
-
+  if (!usuarioEncontrado) {
+    return (
+    <div className="alert alert-danger" role="alert">
+  {messagemDeErro + ' '}<Link to="/">Voltar</Link>
+</div>
     )
   }
 
   return (
-        <div>Usuario: {nome} </div>
+    <div className="usuario-container container-fluid">
+        <Perfil dados={usuario} />
+
+    </div>
   )
 }

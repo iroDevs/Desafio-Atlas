@@ -1,0 +1,29 @@
+.foto-perfil {
+    border-radius: 60%;
+    width: 350px;
+    height:300px;
+}
+.btn-perfil {
+    width: 100%;
+    color:rgb(0, 0, 0);
+    background-color: rgba(185, 184, 184, 0.199);
+}
+.login-perfil {
+    font-size:20px;
+    color: rgba(138, 138, 138, 0.589)
+}
+
+.twitter-name {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.container-informacao-perfil {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.perfil-container {
+    
+    
+}

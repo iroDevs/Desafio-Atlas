@@ -40,4 +40,4 @@ Para rodar os testes basta executar o comando com seu ambiente já configurado
 
 ## Delploy Vercel
 
-<a hrefe="https://desafio-atlas-n71z3iy9e-irodevs.vercel.app/">Desafio Atlas</a>
+link : https://desafio-atlas-n71z3iy9e-irodevs.vercel.app/
